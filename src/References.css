@@ -1,0 +1,47 @@
+.references-banner {
+  width: 100vw;
+  overflow: hidden;
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 0 0 4rem 0;
+  padding: 1.5rem 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.references-track {
+  display: flex;
+  align-items: center;
+  animation: scroll-left 40s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+.reference-logo {
+  flex: 0 0 auto;
+  margin: 0 3rem;
+  filter: grayscale(1) brightness(0.2);
+  opacity: 0.7;
+}
+.reference-logo img {
+  height: 35px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%);
+  }
+}
+@media (max-width: 600px) {
+  .reference-logo img {
+    height: 25px;
+  }
+  .reference-logo {
+    margin: 0 2rem;
+  }
+}
