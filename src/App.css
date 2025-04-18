@@ -43,18 +43,18 @@
 }
 
 .hero-section {
-  height: calc(100vh - 3.2rem);
+  height: 100vh;
   padding: 0;
   background: var(--color-bg-light);
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: 4rem;
 }
 
 .hero-nav {
-  box-shadow:  3px 20px 0px rgba(0, 0, 0, .2);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, .2);
   border-radius: 80px;
-  margin-bottom: 12px;
   width: 100%;
   max-width: 780px;
   margin: 0 auto;
@@ -62,8 +62,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
   background: var(--color-bg-light);
   height: 3.2rem;
