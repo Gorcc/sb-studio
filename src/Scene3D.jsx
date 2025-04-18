@@ -116,7 +116,7 @@ export default function Scene3D() {
         <Suspense fallback={null}>
           <PerspectiveCamera
             makeDefault
-            position={[0, 0, 700]}
+            position={[0, 0, 750]}
             fov={20}
           />
 
