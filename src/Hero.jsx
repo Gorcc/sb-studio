@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Scene3D from "./Scene3D";
 import References from "./References";
 import "./Hero.css";
-import "./Header.css";
+import "./header.css";
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
