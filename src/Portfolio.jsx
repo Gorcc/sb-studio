@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import References from "./References";
+import "./Portfolio.css";
 import djImage from "./assets/dj.jpg";
 import idafinImage from "./assets/idafin.jpg";
 import { Line } from 'react-chartjs-2';
@@ -29,14 +30,16 @@ ChartJS.register(
 
 const projects = [
   {
-    title: "DJ Portfolio",
-    description: "A minimalist portfolio showcasing the art of music and performance.",
+    title: "Silverynx Technologies",
+    date: "5/31/24",
+    description: "Web design & Web development",
     image: djImage,
     link: "#"
   },
   {
-    title: "IDAFIN",
-    description: "Financial technology platform with a modern approach to banking.",
+    title: "Evergreen Solutions",
+    date: "8/8/24",
+    description: "Web design & Web development",
     image: idafinImage,
     link: "#"
   }
@@ -147,55 +150,31 @@ const chartOptions = {
 };
 
 const Portfolio = () => (
-  <section className="portfolio-section" id="work">
-    <References />
-    <motion.div 
-      className="portfolio-content"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="portfolio-grid">
-        {projects.map((project, idx) => (
-          <motion.a 
-            href={project.link} 
-            className="portfolio-card" 
-            key={idx} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            whileHover={{ y: -10 }}
-            transition={{ duration: 0.2 }}
-          >
-            <motion.div 
-              className="portfolio-image-container"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-            >
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="portfolio-img"
-              />
-            </motion.div>
-            <div className="portfolio-info">
-              <h3 className="portfolio-title">{project.title}</h3>
-              <p className="portfolio-description">{project.description}</p>
-            </div>
-          </motion.a>
-        ))}
-      </div>
-      <motion.div 
-        className="chart-section"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <h3 className="chart-title">Growth & Impact</h3>
-        <div className="chart-container">
-          <Line data={chartData} options={chartOptions} />
-        </div>
-      </motion.div>
-    </motion.div>
+  <section className="portfolio-section minimalist-portfolio" id="work">
+    <div className="portfolio-grid minimalist-portfolio">
+      {projects.map((project, idx) => (
+        <a 
+          href={project.link} 
+          className="portfolio-card minimalist-card" 
+          key={idx} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <div className="portfolio-info minimalist-info">
+            <span className="portfolio-date">{project.date}</span>
+            <h3 className="portfolio-title minimalist-title">{project.title}</h3>
+            <p className="portfolio-description minimalist-description">{project.description}</p>
+          </div>
+          <div className="portfolio-image-container minimalist-image-container">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="portfolio-img minimalist-img"
+            />
+          </div>
+        </a>
+      ))}
+    </div>
   </section>
 );
 

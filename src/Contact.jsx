@@ -1,4 +1,5 @@
 import React from "react";
+import "./Contact.css";
 
 const socials = [
   { name: "Instagram", url: "https://instagram.com/", icon: (

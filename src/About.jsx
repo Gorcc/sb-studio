@@ -1,4 +1,5 @@
 import React from "react";
+import "./About.css";
 
 const techStack = [
   { name: "React", color: "#000000" },

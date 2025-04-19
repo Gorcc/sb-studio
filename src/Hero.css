@@ -1,0 +1,145 @@
+.hero-section {
+  height: 100vh;
+  padding: 0;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+ background-color: black;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  gap: 4rem;
+  align-items: center;
+  height: calc(100vh - 12rem);
+  flex: 1;
+  position: relative;
+}
+
+.hero-3d {
+  z-index: 1;
+  width: 120vw;
+  height: 100%;
+  position: absolute;
+  right: -76vw;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-3d > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-text {
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+ 
+}
+
+.hero-title {
+    font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(90deg, #e2d62d, #b9b604); /* Purple gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-subtext {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: black;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-bg-light);
+  background: var(--color-accent);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--transition);
+  z-index: 999;
+  border: 1px solid rgb(238, 236, 236);
+}
+
+.cta-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  border: 1px solid black;
+}
+
+.hero-references {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .hero-text {
+    text-align: center;
+    order: 1;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+  .hero-3d {
+display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+  }
+
+  .hero-3d {
+    display: none;
+  }
+}
