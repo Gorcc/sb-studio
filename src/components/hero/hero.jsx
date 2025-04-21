@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import Scene3D from "./Scene3D";
-import References from "./References";
-import "./Hero.css";
+import Scene3D from "../scene3d/scene3d";
+import References from "../references/references";
+import "./hero.css";
 import "./header.css";
 
 const Hero = () => {

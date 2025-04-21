@@ -1,5 +1,5 @@
 import React from "react";
-import "./References.css";
+import "./references.css";
 
 const references = [
   { name: "BMW", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" },

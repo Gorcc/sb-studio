@@ -1,10 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
-import References from "./References";
 import "./portfolio.css"
-import djImage from "./assets/dj.jpg";
-import idafinImage from "./assets/idafin.jpg";
-import { Line } from 'react-chartjs-2';
+import djImage from "../../assets/dj.jpg";
+import idafinImage from "../../assets/idafin.jpg";
 import {
   Chart as ChartJS,
   CategoryScale,
