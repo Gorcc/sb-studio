@@ -2,15 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import Scene3D from "../scene3d/scene3d";
 import References from "../references/references";
 import "./hero.css";
-import "./header.css";
+import "./header.scss";
+import Navbar from "../navbar/navbar.jsx";
 
 const Hero = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const highlightRefs = useRef([]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+
+
+
+  
+
 
   // Custom animation function
   useEffect(() => {
@@ -159,20 +161,7 @@ const Hero = () => {
 
   return (
     <>
-      <header className="hero-nav">
-        <div className="logo">Almego Studio</div>
-        <button className="hamburger-menu" onClick={toggleMenu} aria-label="Menu">
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-        </button>
-        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <li><a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a></li>
-          <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a></li>
-          <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
-          <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
-        </ul>
-      </header>
+      <Navbar></Navbar>
       <section className="hero-section">
         <div className="hero-content">
           <div className="hero-text">
@@ -184,9 +173,9 @@ const Hero = () => {
             </p>
             <a href="#contact" className="cta-btn">Start Your Project</a>
           </div>
-          <div className="hero-3d">
+          {/* <div className="hero-3d">
             <Scene3D />
-          </div>
+          </div> */}
         </div>
         <div className="hero-references">
           <References />

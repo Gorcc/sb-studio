@@ -1,26 +1,132 @@
+.hero-nav-scrolled {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, .2);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 540px;
+  margin: 16px auto;
+  padding: 0.2rem 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.5);
+  height: 3.2rem;
+  transition: all ease-in 0.33s;
+  .nav-links a  {
+
+font-weight: 500; 
+background-color: rgb(255, 255, 255);
+border-radius: 8px;
+padding: 0.4rem 0.8rem;
+position: relative;
+span {
+  position: absolute;
+  bottom: 25%;
+  left: 0%;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  font-weight: 900;
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+
+}
+
+.nav-links a:hover {
+  span {
+    display: block;
+    opacity: 0.7;
+    left: 43%;
+    transition: 0.3s all ease;
+  
+  }
+}
+
+.logo { 
+font-weight: 600; 
+background-color: rgb(0, 0, 0);
+border-radius: 8px;
+padding: 0.8rem 1.6rem;
+color: white;
+}
+
+.nav-links {
+  gap: 0;
+  background-color: rgb(255, 255, 255);
+border-radius: 12px;
+padding: 0.4rem 0.8rem;
+}
+
+
+
+}
+
+.nav-links a  {
+
+ 
+ 
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  position: relative;
+  span {
+    position: absolute;
+    bottom: 25%;
+    left: 0%;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    font-weight: 900;
+    font-size: 1.5rem;
+    opacity: 0;
+  }
+  
+  
+  }
+  
+  .nav-links a:hover {
+    span {
+      display: block;
+      opacity: 0.7;
+      left: 43%;
+      transition: 0.3s all ease;
+    
+    }
+  }
+
+
 .hero-nav {
   box-shadow: 4px 4px 20px rgba(0, 0, 0, .2);
-  border-radius: 80px;
+ 
   width: 100%;
-  max-width: 780px;
-  margin: 0 auto;
+  max-width: 65%;
+  margin: 16px auto;
   padding: 0.6rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 16px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  background: var(--color-bg-light);
   height: 3.2rem;
+  .nav-links a, .logo {
+    color: white!important;
+  }
+
+  transition: all ease-out 0.33s;
 
 }
 
+
+
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-text-light);
   letter-spacing: -0.03em;
@@ -33,7 +139,7 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
