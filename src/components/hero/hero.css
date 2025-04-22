@@ -62,7 +62,7 @@
 }
 
 .hero-title .highlight {
-  background: linear-gradient(90deg, #e2d62d, #b9b604); /* Purple gradient */
+  background: linear-gradient(90deg, #4208e0, #8105e7); /* Orange-red gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;

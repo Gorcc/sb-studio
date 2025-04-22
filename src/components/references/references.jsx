@@ -1,25 +1,26 @@
 import React from "react";
 import "./references.css";
 
-const references = [
-  { name: "BMW", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" },
-  { name: "Mercedes", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/640px-Mercedes-Logo.svg.png" },
-  { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" },
-  { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-  { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Amazon_Music_%28Logo%29.svg/640px-Amazon_Music_%28Logo%29.svg.png" },
-  { name: "Burger King", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Burger_King_1969_logo.svg/640px-Burger_King_1969_logo.svg.png" }
+const statistics = [
+  { value: "30%", text: "Increase in sales" },
+  { value: "15%", text: "More customers" },
+  { value: "40%", text: "Higher engagement" },
+  { value: "25%", text: "Improved brand awareness" },
+  { value: "50%", text: "Better customer retention" },
+  { value: "20%", text: "Increased conversion rate" }
 ];
 
 const References = () => {
-  // Create three sets of logos for a seamless loop
-  const tripleLogos = [...references, ...references, ...references];
+  // Create three sets of statistics for a seamless loop
+  const tripleStats = [...statistics, ...statistics, ...statistics];
 
   return (
     <div className="references-banner">
       <div className="references-track">
-        {tripleLogos.map((ref, idx) => (
-          <div className="reference-logo" key={idx}>
-            <img src={ref.logo} alt={ref.name} title={ref.name} loading="lazy" />
+        {tripleStats.map((stat, idx) => (
+          <div className="reference-stat" key={idx}>
+            <span className="stat-value">{stat.value}</span>
+            <span className="stat-text">{stat.text}</span>
           </div>
         ))}
       </div>

@@ -15,18 +15,27 @@
   width: max-content;
   will-change: transform;
 }
-.reference-logo {
+.reference-stat {
   flex: 0 0 auto;
   margin: 0 3rem;
-  filter: grayscale(1) brightness(1.1);
-  opacity: 0.8;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.reference-logo img {
-  height: 35px;
-  width: auto;
-  display: block;
-  
-  object-fit: contain;
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-text {
+  font-size: 1rem;
+  color: black;
+  white-space: nowrap;
 }
 @keyframes scroll-left {
   from {
@@ -37,10 +46,13 @@
   }
 }
 @media (max-width: 600px) {
-  .reference-logo img {
-    height: 25px;
+  .stat-value {
+    font-size: 1.5rem;
   }
-  .reference-logo {
+  .stat-text {
+    font-size: 0.8rem;
+  }
+  .reference-stat {
     margin: 0 2rem;
   }
 }
