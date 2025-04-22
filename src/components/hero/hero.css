@@ -1,12 +1,11 @@
 .hero-section {
   height: 100vh;
   padding: 0;
- 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
- background-color: black;
+  position: relative;
 }
 
 .hero-content {
@@ -22,26 +21,24 @@
   position: relative;
 }
 
-.hero-3d {
-  z-index: 1;
-  width: 120vw;
-  height: 100%;
-  position: absolute;
-  right: -76vw;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.hero-3d > div {
-  width: 100%;
-  height: 100%;
+.video-background {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 }
 
 .hero-text {
@@ -61,7 +58,7 @@
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color: white;
+  color: black;
 }
 
 .hero-title .highlight {

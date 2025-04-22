@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import Scene3D from "../scene3d/scene3d";
 import References from "../references/references";
 import "./hero.css";
 import "./header.scss";
 import Navbar from "../navbar/navbar.jsx";
+import backgroundVideo from "../../assets/almego-bg.mp4";
 
 const Hero = () => {
   const highlightRefs = useRef([]);
@@ -163,6 +163,12 @@ const Hero = () => {
     <>
       <Navbar></Navbar>
       <section className="hero-section">
+        <div className="video-background">
+          <video autoPlay muted loop className="background-video">
+            <source src={backgroundVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
@@ -173,9 +179,6 @@ const Hero = () => {
             </p>
             <a href="#contact" className="cta-btn">Start Your Project</a>
           </div>
-          {/* <div className="hero-3d">
-            <Scene3D />
-          </div> */}
         </div>
         <div className="hero-references">
           <References />
