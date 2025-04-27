@@ -13,6 +13,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import { motion } from "framer-motion";
 
 ChartJS.register(
   CategoryScale,
@@ -27,11 +28,11 @@ ChartJS.register(
 
 const projects = [
   {
-    title: "Silverynx Technologies",
-    date: "5/31/24",
+    title: "Hive Records",
+    date: "23/04/25",
     description: "Web design & Web development",
-    image: djImage,
-    link: "#"
+    image: "https://cdn.discordapp.com/attachments/719932386560704534/1366186680062705776/image.png?ex=681007ff&is=680eb67f&hm=331562f0be25f0026c26efdf9114ad063f3508e47c1badc624724e2a34f5dde3&",
+    link: "www.hiverecords24.com"
   },
   {
     title: "Evergreen Solutions",
@@ -146,16 +147,25 @@ const chartOptions = {
   }
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+};
+
 const Portfolio = () => (
   <section className="portfolio-section minimalist-portfolio" id="work">
     <div className="portfolio-grid minimalist-portfolio">
       {projects.map((project, idx) => (
-        <a 
+        <motion.a 
           href={project.link} 
           className="portfolio-card minimalist-card" 
           key={idx} 
           target="_blank" 
           rel="noopener noreferrer"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div className="portfolio-info minimalist-info">
             <span className="portfolio-date">{project.date}</span>
@@ -169,7 +179,7 @@ const Portfolio = () => (
               className="portfolio-img minimalist-img"
             />
           </div>
-        </a>
+        </motion.a>
       ))}
     </div>
   </section>

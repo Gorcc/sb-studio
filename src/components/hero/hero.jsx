@@ -4,6 +4,12 @@ import "./hero.css";
 import "./header.scss";
 import Navbar from "../navbar/navbar.jsx";
 import backgroundVideo from "../../assets/almego-bg.mp4";
+import { motion } from "framer-motion";
+
+const fadeSlideUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeIn" } }
+};
 
 const Hero = () => {
   const highlightRefs = useRef([]);
@@ -161,7 +167,7 @@ const Hero = () => {
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <section className="hero-section">
         <div className="video-background">
           <video autoPlay muted loop className="background-video">
@@ -171,13 +177,33 @@ const Hero = () => {
         </div>
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title">
+            <motion.h1
+              className="hero-title"
+              variants={fadeSlideUp}
+              initial="hidden"
+              animate="visible"
+            >
               We create <br/><span className="highlight" ref={addHighlightRef}>digital</span><br/>experiences that <br/> <span className="highlight" ref={addHighlightRef}>matter</span>
-            </h1>
-            <p className="hero-subtext">
+            </motion.h1>
+            <motion.p
+              className="hero-subtext"
+              variants={fadeSlideUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+            >
               Crafting modern, minimalist designs that elevate your brand and engage your audience.
-            </p>
-            <a href="#contact" className="cta-btn">Start Your Project</a>
+            </motion.p>
+            <motion.a
+              href="#contact"
+              className="cta-btn"
+              variants={fadeSlideUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+            >
+              Start Your Project
+            </motion.a>
           </div>
         </div>
         <div className="hero-references">
