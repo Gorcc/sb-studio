@@ -59,6 +59,11 @@
     border-radius: 12px;
     padding: 0.4rem 0.8rem;
   }
+  
+  /* Fix hamburger menu in scrolled state */
+  .hamburger-line {
+    background-color: black; /* Black hamburger lines in scrolled state */
+  }
 }
 
 .nav-links a {
@@ -192,54 +197,94 @@
   .hamburger-menu {
     display: flex;
     position: relative;
-    z-index: 102; /* Higher than nav-links */
+    z-index: 102;
+    margin-right: 10px;
   }
 
   .hamburger-line {
-    background-color: white; /* Make hamburger lines white for better visibility */
-    height: 3px; /* Slightly thicker lines */
-    width: 24px; /* Ensure consistent width */
+    background-color: white;
+    height: 2px;
+    width: 24px;
   }
-
+  
+  /* Completely new mobile menu design */
   .nav-links {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Use viewport width to prevent overflow */
+    width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: #000;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    transition: transform 0.3s ease;
-    transform: translateX(100%); /* Start off-screen */
+    gap: 3rem;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 101;
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-    box-sizing: border-box; /* Ensure padding is included in width */
   }
-
+  
   .nav-links.open {
-    transform: translateX(0); /* Slide in from right */
+    transform: translateY(0);
   }
-
+  
   .nav-links a {
-    font-size: 1.2rem;
-    color: var(--color-text-dark) !important; /* Ensure text is visible */
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: white !important;
+    letter-spacing: 0.05em;
+    padding: 0.5rem;
+    position: relative;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    background: transparent;
   }
-
+  
+  .nav-links a:hover {
+    opacity: 1;
+  }
+  
+  /* Remove the additional X mark */
+  /* .nav-links:before {
+    content: "×";
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+  } */
+  
+  /* Remove any previous styling that might conflict */
+  .nav-links a::after {
+    display: none;
+  }
+  
+  .nav-links a span {
+    display: none;
+  }
+  
   .hero-nav {
     padding: 0.6rem 1.5rem;
-    max-width: 90%; /* Wider on mobile */
-    width: 90%; /* Ensure width is consistent */
-    box-sizing: border-box; /* Include padding in width calculation */
+    max-width: 90%;
+    width: 90%;
+    box-sizing: border-box;
   }
   
   .hero-nav-scrolled {
-    max-width: 90%; /* Consistent with hero-nav */
+    max-width: 90%;
     width: 90%;
     box-sizing: border-box;
     overflow: visible;
+    
+    .hamburger-line {
+      background-color: black;
+    }
+  }
+  
+  /* When menu is open, make hamburger lines white regardless of scroll state */
+  .hamburger-menu.open .hamburger-line {
+    background-color: white;
   }
 }
