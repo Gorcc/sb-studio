@@ -1,43 +1,96 @@
-import React from "react";
-import "./services.css";
+import React from 'react';
+import { motion } from 'framer-motion';
+import './services.css';
 
-const services = [
+const serviceItems = [
+  {
+    title: "UI/UX Design",
+    description: "Creating intuitive, user-centered interfaces that enhance user experience and engagement.",
+    icon: "✦" // You can replace with an actual icon component if preferred
+  },
   {
     title: "Web Design",
-    icon: (
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#FF6B00"/><path d="M14 34V14h20v20H14zm2-2h16V16H16v16zm2-8h12v2H18v-2z" fill="#fff"/></svg>
-    ),
-    description: "Modern, responsive websites."
+    description: "Crafting visually stunning websites that reflect your brand identity and captivate your audience.",
+    icon: "✦"
+  },
+  {
+    title: "Web Development",
+    description: "Building responsive, high-performance websites with clean code and modern technologies.",
+    icon: "✦"
+  },
+  {
+    title: "SEO",
+    description: "Optimizing your online presence to improve visibility and drive organic traffic to your website.",
+    icon: "✦"
   },
   {
     title: "Branding",
-    icon: (
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#3B82F6"/><circle cx="24" cy="24" r="10" stroke="#fff" strokeWidth="3"/><circle cx="24" cy="24" r="4" fill="#fff"/></svg>
-    ),
-    description: "Distinctive brand identities."
+    description: "Developing cohesive brand identities that communicate your values and resonate with your audience.",
+    icon: "✦"
   },
   {
-    title: "UI/UX",
-    icon: (
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#FF6B00"/><rect x="16" y="16" width="16" height="16" rx="4" fill="#fff"/><rect x="20" y="20" width="8" height="8" rx="2" fill="#3B82F6"/></svg>
-    ),
-    description: "Intuitive, user-focused design."
+    title: "Social Media Posts",
+    description: "Creating engaging content that builds community and extends your brand's reach across platforms.",
+    icon: "✦"
   }
 ];
 
-const Services = () => (
-  <section className="services-section" id="services">
-    <h2 className="section-title">Services</h2>
-    <div className="services-grid">
-      {services.map((service, idx) => (
-        <div className="service-card" key={idx}>
-          <div className="service-icon">{service.icon}</div>
-          <h3 className="service-title">{service.title}</h3>
-          <p className="service-desc">{service.description}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] }
+  }
+};
+
+const Services = () => {
+  return (
+    <section className="services-section" id="services">
+      <motion.div 
+        className="services-header"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <h2 className="services-title">Our Services</h2>
+        <p className="services-subtitle">We help brands stand out in the digital age</p>
+      </motion.div>
+      
+      <motion.div 
+        className="services-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {serviceItems.map((service, index) => (
+          <motion.div 
+            className="service-card" 
+            key={index}
+            variants={itemVariants}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+          >
+            <div className="service-icon">{service.icon}</div>
+            <h3 className="service-title">{service.title}</h3>
+            <p className="service-description">{service.description}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
+};
 
 export default Services;

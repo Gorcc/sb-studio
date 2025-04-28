@@ -1,47 +1,110 @@
 .services-section {
-  padding: 5rem 0 3rem 0;
-  background: none;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.services-title {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.services-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.service-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.04);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  transition: transform var(--transition), box-shadow var(--transition);
-  cursor: pointer;
-  border: 1.5px solid var(--color-muted);
-}
-[data-theme="dark"] .service-card {
-  background: #181818;
-  border-color: #232323;
-}
-.service-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.09);
-}
-.service-icon {
-  margin-bottom: 1.2rem;
-}
-.service-title {
-  font-size: 1.3rem;
-  font-family: var(--font-heading);
-  margin-bottom: 0.7rem;
-}
-.service-desc {
-  color: var(--color-muted);
-  font-size: 1rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
-@media (max-width: 900px) {
+.service-card {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.service-title {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.service-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .services-title {
+    font-size: 2.5rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
   .services-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .services-title {
+    font-size: 2rem;
+  }
+  
+  .service-card {
+    padding: 2rem 1.5rem;
   }
 }

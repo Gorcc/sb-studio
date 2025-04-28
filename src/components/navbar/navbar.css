@@ -1,0 +1,6 @@
+/* Add this to your existing navbar.css file */
+.navbar-logo {
+  font-family: 'Giaza', sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}

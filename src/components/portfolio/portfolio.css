@@ -153,3 +153,152 @@
     border-radius: 14px;
   }
 }
+
+/* Add these styles to your existing portfolio.css */
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.portfolio-info {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: Add a subtle reveal effect for text elements */
+.portfolio-title, 
+.portfolio-description,
+.portfolio-date {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-section-header {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0 1rem 0;
+}
+
+.portfolio-section-title {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .portfolio-section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .portfolio-section-header {
+    padding: 2rem 0 0.5rem 0;
+  }
+}
+
+/* Chart Section Styles */
+.chart-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.04);
+}
+
+.chart-title {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.chart-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart-wrapper {
+  height: 400px;
+  margin-bottom: 3rem;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.stat-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .stat-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .chart-title {
+    font-size: 2rem;
+  }
+  
+  .chart-description {
+    font-size: 1rem;
+  }
+  
+  .chart-container {
+    padding: 1.5rem;
+    margin: 2rem auto;
+  }
+  
+  .chart-wrapper {
+    height: 300px;
+  }
+}
